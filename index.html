@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechSupport - Gestão de Chamados</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>⚙ TechSupport</h1>
+        <p>Gerenciamento de Chamados Técnicos</p>
+    </header>
+
+    <main class="container">
+
+        <!-- CADASTRO -->
+        <section id="cadastro" class="card">
+            <h2>Criar conta</h2>
+            <p class="subtitle">Cadastre-se para acessar o sistema</p>
+
+            <form id="formCadastro">
+                <label>Nome completo</label>
+                <input type="text" id="nome" required>
+
+                <label>E-mail</label>
+                <input type="email" id="emailCadastro" required>
+
+                <label>Senha</label>
+                <input type="password" id="senhaCadastro"
+             minlength="8" required>
+
+                <button type="submit">Cadastrar</button>
+            </form>
+
+            <p>Já possui uma conta?
+                <a href="#" id="irLogin">Fazer login</a>
+            </p>
+        </section>
+
+        <!-- LOGIN -->
+        <section id="login" class="card hidden">
+            <h2>Bem-vindo de volta!</h2>
+            <p class="subtitle">Entre com seus dados de acesso</p>
+
+            <form id="formLogin">
+                <label>E-mail</label>
+                <input type="email" id="emailLogin" required>
+
+                <label>Senha</label>
+                <input type="password" id="senhaLogin" required>
+
+                <button type="submit">Entrar</button>
+            </form>
+
+            <p>Não possui uma conta?
+                <a href="#" id="irCadastro">Cadastre-se</a>
+            </p>
+        </section>
+
+        <!-- PAINEL PROTEGIDO -->
+        <section id="painel" class="hidden">
+
+            <div class="welcome">
+                <div>
+                    <h2>Olá, <span id="nomeUsuario"></span>!</h2>
+                    <p>Bem-vindo ao painel de chamados.</p>
+                </div>
+                <button id="btnSair" class="btn-sair">
+                    Sair
+                </button>
+            </div>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <h3 id="totalChamados">0</h3>
+                    <p>Total de chamados</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3 id="totalAbertos">0</h3>
+                    <p>Chamados abertos</p>
+                </div>
+            </div>
+
+            
+            <div class="card">
+                <h2>Abrir novo chamado</h2>
+
+                <form id="formChamado">
+
+                    <label>Equipamento</label>
+                    <select id="equipamento" required>
+                        <option value="">Selecione um equipamento</option>
+                    </select>
+
+                    <label>Descrição do problema</label>
+                    <textarea id="descricao"
+                            placeholder="Descreva o problema..."
+                            required></textarea>
+
+                    <label>Prioridade</label>
+                    <select id="prioridade" required>
+                        <option value="">Selecione a prioridade</option>
+                        <option value="Baixa">Baixa</option>
+                        <option value="Média">Média</option>
+                        <option value="Alta">Alta</option>
+                    </select>
+
+                    <button type="submit">Abrir chamado</button>
+                </form>
+            </div>
+
+            <!-- LISTA DE CHAMADOS -->
+            <div class="card">
+                <h2>Meus chamados</h2>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Equipamento</th>
+                                <th>Descrição</th>
+                                <th>Prioridade</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="listaChamados">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+
+        <div id="mensagem" role="status" aria-live="polite"></div>
+
+    </main>
+
+    <footer>
+        <p>TechSupport © 2026 - Sistema de Chamados</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
