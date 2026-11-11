@@ -1,0 +1,32 @@
+
+<mxfile host="app.diagrams.net">
+  <diagram name="Modelo Logico SAEP">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="usuarios" value="&lt;b&gt;USUARIOS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;PK&lt;/b&gt; id : INT&lt;br&gt;nome : VARCHAR(100)&lt;br&gt;email : VARCHAR(150) UNIQUE&lt;br&gt;senha : VARCHAR(255)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;align=left;spacingLeft=10;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="170" width="250" height="170" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="equipamentos" value="&lt;b&gt;EQUIPAMENTOS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;PK&lt;/b&gt; id : INT&lt;br&gt;nome : VARCHAR(100)&lt;br&gt;descricao : VARCHAR(255)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;align=left;spacingLeft=10;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="650" y="170" width="250" height="150" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="chamados" value="&lt;b&gt;CHAMADOS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;PK&lt;/b&gt; id : INT&lt;br&gt;&lt;b&gt;FK&lt;/b&gt; equipamento_id : INT&lt;br&gt;&lt;b&gt;FK&lt;/b&gt; usuario_id : INT&lt;br&gt;descricao : TEXT&lt;br&gt;prioridade : ENUM&lt;br&gt;status : ENUM&lt;br&gt;data_abertura : DATETIME" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;align=left;spacingLeft=10;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="350" y="440" width="280" height="230" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="rel1" value="1 : N" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeWidth=2;fontSize=14;fontStyle=1;" edge="1" parent="1" source="usuarios" target="chamados">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="rel2" value="1 : N" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeWidth=2;fontSize=14;fontStyle=1;" edge="1" parent="1" source="equipamentos" target="chamados">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
