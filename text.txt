@@ -1,0 +1,11 @@
+RF01 – Cadastro de usuários: O sistema deve permitir que novos usuários façam seu cadastro, informando nome, e-mail e senha.
+
+RF02 – Login no sistema: O sistema deve permitir que os usuários cadastrados acessem a plataforma utilizando seu e-mail e senha.
+
+RF03 – Abertura de chamados: O sistema deve permitir que os funcionários registrem chamados de manutenção, informando o equipamento com problema e descrevendo o defeito apresentado.
+
+RNF01 – Segurança: O sistema deve proteger os dados dos usuários, permitindo o acesso somente a pessoas autorizadas.
+
+RN01 – Regra de negócio: Todo chamado registrado deve receber um número único de identificação, evitando duplicidade e facilitando a consulta das solicitações.
+
+CA01 – Critério de aceitação (Abrir chamado): Quando o funcionário estiver logado, deverá acessar a opção "Abrir chamado", selecionar o equipamento, descrever o problema e clicar em salvar. O sistema deverá registrar as informações, gerar um número de identificação e apresentar uma mensagem confirmando que o chamado foi aberto com sucesso.
